@@ -4,16 +4,19 @@
 # 3. config.yml
 
 name: danielro.se
-description: 
+description: Daniel Rose, Lead Front End Web Developer at The Genuine Gemstone Company.
 author:
   name: Dan Rose
   email: im@danielro.se
+url: "https://danielro.se"
+twitter_username: danjayrose
+github_username:  danjayrose
+permalink: /@danjayrose/:title
 
 # Grunt handles images and assets.
 exclude: ['img', 'css', 'js', 'fonts',
           '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
 
-include: ['.htaccess']
 
 # _config.build.yml sets future and show_drafts to false on `grunt build`
 future: true
