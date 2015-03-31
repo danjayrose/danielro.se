@@ -3,6 +3,7 @@
 # 2. config.build.yml
 # 3. config.yml
 
+title: danielro.se
 name: danielro.se
 description: Daniel Rose, Lead Front End Web Developer at The Genuine Gemstone Company.
 author:
@@ -12,6 +13,9 @@ url: "https://danielro.se"
 twitter_username: danjayrose
 github_username:  danjayrose
 permalink: /@danjayrose/:title
+
+sass:
+    sass_dir: _sass
 
 # Grunt handles images and assets.
 exclude: ['img', 'css', 'js', 'fonts',
