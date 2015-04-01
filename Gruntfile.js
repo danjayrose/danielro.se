@@ -43,6 +43,7 @@ module.exports = function (grunt) {
           src: [
             '.jekyll/**/*.html',
             '.tmp/css/**/*.css',
+            '<%= yeoman.app %>/scss/**/*.scss',
             '{.tmp,<%= yeoman.app %>}/js/**/*.js',
             '{<%= yeoman.app %>}/_bower_components/**/*.js',
             '<%= yeoman.app %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
@@ -56,7 +57,8 @@ module.exports = function (grunt) {
               '<%= yeoman.app %>'
             ]
           },
-          watchTask: true
+          watchTask: true,
+          logLevel: "debug"
         }
       },
       dist: {
@@ -118,6 +120,7 @@ module.exports = function (grunt) {
         httpImagesPath: '/img',
         httpGeneratedImagesPath: '/img/generated',
         outputStyle: 'expanded',
+        sourcemap: true,
         raw: 'extensions_dir = "<%= yeoman.app %>/_bower_components"\n'
       },
       dist: {
@@ -134,7 +137,8 @@ module.exports = function (grunt) {
     },
     autoprefixer: {
       options: {
-        browsers: ['last 2 versions']
+        browsers: ['last 2 versions'],
+        map: true
       },
       dist: {
         expand: true,
