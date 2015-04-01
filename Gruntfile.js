@@ -58,7 +58,7 @@ module.exports = function (grunt) {
             ]
           },
           watchTask: true,
-          logLevel: "debug"
+          logLevel: 'debug'
         }
       },
       dist: {
