@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<article class="page page--post">
+
+  <header class="page__header"
+    {% if page.image.feature %}
+      style="background-image:url({{ page.image.feature }});"
+    {% endif %}
+  >
+    <h1 class="page__title wrapper">{{ page.title }}</h1>
+    <time class="page__pub-date wrapper" datetime="{{ page.date | date: "%Y-%m-%d" }}">
+{{ page.date | date: "%A " }}
+{% assign d = page.date | date: "%-d" %}
+{% case d %}
+  {% when '1' or '21' or '31' %}{{ d }}st
+  {% when '2' or '22' %}{{ d }}nd
+  {% when '3' or '23' %}{{ d }}rd
+  {% else %}{{ d }}th
+  {% endcase %}
+{{ page.date | date: " %B %Y" }}
+{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
+	 </time>
+   {% capture words %}
+    {{ content | number_of_words | minus: 180 }}
+    {% endcapture %}
+    <time class="page__reading-time" datetime="{{ words | plus: 180 | divided_by: 180 | append: "m"}}">
+      <div class="wrapper">
+      {% unless words contains "-" %}
+        {{ words | plus: 180 | divided_by: 180 | prepend: "Approx. " | append: " minute read" }}
+        {% else %}
+        Under 1 minute read
+      {% endunless %}
+      </div>
+    </time>
+  </header>
+
+  <section class="page-content wrapper">
+    {{ content }}
+  </section>
+
+</article>

@@ -1,0 +1,53 @@
+.page-content {
+	padding-bottom: rhythm(1);
+}
+
+.page__summary {
+	background: $color-secondary-fade;
+	padding-bottom: rhythm(1);
+	@include clearfix;
+
+	&:first-child {
+		.page--home & {
+			background: $color-type-invert;
+		}
+	}
+}
+
+.page__header {
+	background: $color-secondary-accent;
+	background-position: center;
+	overflow: hidden;
+}
+
+.page__title {
+	max-width: 350px;
+	padding-left: calc((100% - 52.5rem) / 2);
+	margin-left: rhythm(.75);
+	box-sizing: content-box;
+}
+
+.page__pub-date {
+	display: block;
+	color: $color-main;
+	font-weight: 700;
+}
+
+.page__reading-time {
+	display: inline-block;
+	color: $color-highlight;
+	background: $color-darken-opacity;
+	font-style: italic;
+	padding-left: calc((100% - 52.5rem) / 2);
+}
+
+img {
+	.page--post & {
+		float: right;
+		padding: 0 0 rhythm(.5) 0;
+
+		@include media(">=tb") {
+			padding-left: rhythm(.5);
+		}
+	}
+}
