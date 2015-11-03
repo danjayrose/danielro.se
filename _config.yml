@@ -12,10 +12,7 @@ author:
 url: "https://danielro.se"
 twitter_username: danjayrose
 github_username:  danjayrose
-permalink: /@danjayrose/:title
-
-sass:
-    sass_dir: _sass
+permalink: /:categories/:title
 
 # Grunt handles images and assets.
 exclude: ['img', 'css', 'js', 'fonts',
@@ -41,4 +38,21 @@ markdown: kramdown
 #     coderay_bold_every: 10
 #     coderay_css: style
 
-pygments: false
+# Site settings
+baseurl: ""
+url: ""
+
+highlighter: false
+
+image:
+  source: _assets/img
+  output: generated
+  presets:
+    users:
+      attr:
+        class: user-portrait
+        itemprop: image
+      width: 350
+    half:
+      width: 400
+      height: 400
