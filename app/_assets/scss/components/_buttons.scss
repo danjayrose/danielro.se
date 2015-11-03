@@ -1,0 +1,9 @@
+.btn {
+	outline: 0;
+	border: none;
+	padding: rhythm(.4) rhythm(.5);
+	text-decoration: none;
+	display: inline-block;
+	background-color: $color-main;
+	color: $color-highlight;
+}
