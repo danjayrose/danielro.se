@@ -9,7 +9,6 @@ description: Daniel Rose, Lead Front End Web Developer at The Genuine Gemstone C
 author:
   name: Dan Rose
   email: im@danielro.se
-url: "https://danielro.se"
 twitter_username: danjayrose
 github_username:  danjayrose
 permalink: /:categories/:title
@@ -40,7 +39,7 @@ markdown: kramdown
 
 # Site settings
 baseurl: ""
-url: ""
+url: "https://danielro.se"
 
 highlighter: false
 

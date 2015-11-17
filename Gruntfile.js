@@ -245,7 +245,8 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '<%= app.app %>/fonts',
                     src: '**/*.{woff,woff2}',
-                    dest: '<%= app.dist %>/<%= app.baseurl %>/fonts'
+                    dest: '<%= app.dist %>/<%= app.baseurl %>/fonts',
+                    format: 'zlib'
                 }]
             }
         },
@@ -283,6 +284,15 @@ module.exports = function(grunt) {
                     dest: '.tmp/<%= app.baseurl %>'
                 }]
             },
+            fonts: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= app.app %>',
+                    src: 'fonts/**/*',
+                    dest: '.tmp/<%= app.baseurl %>'
+                }]
+            },
             dist: {
                 files: [{
                     expand: true,
@@ -290,7 +300,8 @@ module.exports = function(grunt) {
                     cwd: '.tmp/<%= app.baseurl %>',
                     src: [
                         'css/**/*',
-                        'js/**/*'
+                        'js/**/*',
+                        'fonts/**/*'
                     ],
                     dest: '<%= app.dist %>/<%= app.baseurl %>'
                 }]
@@ -320,6 +331,7 @@ module.exports = function(grunt) {
             'clean:server',
             'jekyll:server',
             'copy:sass',
+            'copy:fonts',
             'compass:server',
             'autoprefixer',
             'uglify',
@@ -340,8 +352,9 @@ module.exports = function(grunt) {
         'imagemin',
         'svgmin',
         'svgstore',
-        'zopfli',
+        //'zopfli',
         'copy:sass',
+        'copy:fonts',
         'compass:dist',
         'uncss',
         'autoprefixer',
