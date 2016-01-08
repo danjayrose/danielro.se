@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+  {% include head.html %}
+
+  <!-- build:css({dev,.tmp}) /css/main.css -->
+    <link rel="stylesheet" href="/css/main.css">
+  <!-- endbuild -->
+
+  <!-- build:js(dev) /js/head-scripts.js -->
+
+  <!-- endbuild -->
+
+  <body>
+
+    {% include header.html %}
+
+    <main class="site-content">
+      {{ content }}
+    </main>
+
+    {% if page.id %}
+
+      {% include aside.html %}
+
+    {% endif %}
+
+    {% include footer.html %}
+    
+    {% include scripts.html %}
+
+  </body>
+
+</html>

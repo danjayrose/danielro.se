@@ -1,0 +1,7 @@
+@import "compass/css3/font-face";
+
+@include font-face("gentium book", font-files("gentium-book--regular.woff2", "gentium-book--regular.woff"), false, 400, normal);
+
+@include font-face("gentium book", font-files("gentium-book--700.woff2", "gentium-book--700.woff"), false, 700, normal);
+
+@include font-face("alfa slab one", font-files("alfa-slab-one--regular.woff2", "alfa-slab-one--regular.woff"), false, 400, normal);
