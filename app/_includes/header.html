@@ -21,7 +21,7 @@
                 {% if blogCount < '3' %}
                 <a class="site-nav__sub-link" href="{{post.url}}">{{post.title}}</a>
                 {% endif %}
-              {% endunless %}  
+              {% endunless %}
             {% endfor %}
         </li>
         <li class="site-nav__list-item">
@@ -46,7 +46,7 @@
         </li>
         <li class="site-nav__list-item">
           <div class="site-nav__signpost">
-            <a class="site-nav__link" href="{{ site.baseurl }}/contact/">contact</a>
+            <a class="site-nav__link" href="mailto:{{site.author.email}}">contact</a>
           </div>
           <a class="site-nav__sub-link" href="mailto:{{site.author.email}}">{{site.author.email}}</a>
         </li>
