@@ -271,9 +271,12 @@ h6 {
    * Set 1 unit of vertical rhythm on the top and bottom margin.
    */
 
-  p,
-  pre {
+  p {
     @include output-rhythm(margin, 0 0 rhythm(1));
+  }
+
+  pre {
+    margin: 0;
   }
 
   p {

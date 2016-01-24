@@ -1,5 +1,8 @@
 .page-content {
 	padding-bottom: rhythm(1);
+	p {
+		@extend .wrapper;
+	}
 }
 
 .page__summary {
@@ -18,13 +21,18 @@
 	background: $color-secondary-accent;
 	background-position: center;
 	overflow: hidden;
+	border-bottom: rhythm(.125) solid $color-highlight;
 }
 
 .page__title {
 	max-width: 350px;
-	padding-left: calc((100% - 52.5rem) / 2);
 	margin-left: rhythm(.75);
 	box-sizing: content-box;
+	padding-left: calc((100% - #{rhythm(35)}) / 2);
+
+	@include media(">=wd") {
+		padding-left: calc((100% - #{rhythm(50)}) / 2);
+	}
 }
 
 .page__sub-title {
@@ -38,7 +46,11 @@
 	color: $color-highlight;
 	background: $color-darken-opacity;
 	font-style: italic;
-	padding-left: calc((100% - 52.5rem) / 2);
+	padding-left: calc((100% - #{rhythm(35)}) / 2);
+
+	@include media(">=wd") {
+		padding-left: calc((100% - #{rhythm(50)}) / 2);
+	}
 }
 
 img {

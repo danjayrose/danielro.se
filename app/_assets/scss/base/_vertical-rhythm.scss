@@ -2,7 +2,6 @@ hr {
 	margin-bottom: rhythm(1);
 }
 
-h4,
 .page__sub-title {
 	margin-top: rhythm(-.5);
 }
@@ -18,7 +17,7 @@ h4,
 
 .page__header {
 	padding-top: rhythm(1);
-	margin-bottom: rhythm(1);
+	margin-bottom: rhythm(.875);
 }
 
 .site-aside {
@@ -41,4 +40,9 @@ h4,
 
 .card__img-wrap {
 	margin-bottom: rhythm(.5);
+}
+
+.highlight {
+	padding-top: rhythm(1);
+	margin-bottom: rhythm(1);
 }

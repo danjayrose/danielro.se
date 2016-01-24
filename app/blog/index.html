@@ -5,7 +5,8 @@ layout: default
 
   <section class="page__summary">
     <header class="page__header">
-      <h1 class="page__title wrapper">Blog</h1>
+      <h1 class="h1 page__title wrapper">Blog</h1>
+      <h4 class="page__sub-title wrapper"><a href="/">&laquo;&nbsp;Back to home</a></h4>
     </header>
     <div class="wrapper">
       <div class="grid grid--gutter">
@@ -13,16 +14,8 @@ layout: default
           {% unless post.categories contains 'projects' %}
             <div class="col col--1/2@>ph<=tb col--1/3@>=tb">
               <a class="card" href="{{ post.url | prepend: site.baseurl }}">
-                <figure>
-                  <picture>
-                    <source srcset="" media="(min-width: rhythm(20))">
-                    <img class="card__img" srcset="http://lorempixel.com/441/300/sports" alt="{{ post.title }}" />
-                  </picture>
-                  <figcaption>
-                    <h2>{{ post.title }}</h2>
-                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-                  </figcaption>
-                </figure>
+                <h2>{{ post.title }}</h2>
+                <div>{{ post.date | date: "%b %-d, %Y" }}</div>
               </a>
             </div>
           {% endunless %}

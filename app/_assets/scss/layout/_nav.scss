@@ -14,9 +14,9 @@ body {
 	transition: top $trans-speed;
 	z-index: z('nav');
 	border-bottom: rhythm(.125) solid $color-darken-opacity;
-    background-clip: padding-box;
+  background-clip: padding-box;
 
-    @include media("<=ph") {
+  @include media("<=ph") {
 		&.site-nav--expanded {
 			overflow: visible;
 			height: auto;
