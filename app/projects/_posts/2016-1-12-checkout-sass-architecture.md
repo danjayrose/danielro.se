@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Multi Brand SASS Architecture"
-date:   2016-01-24 21:14:20
+date:   2016-01-24 18.10.00
 category: "TGGC"
 categories: "SASS"
 ---
