@@ -1,0 +1,21 @@
+.post-summary {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  @include trailing-border(1px, 1, $base-font-size, solid $color-secondary);
+  margin-bottom: rhythm(1);
+
+  .col:last-child & {
+    border-bottom: 0;
+    padding-bottom: rhythm(1);
+  }
+
+  .col:only-child & {
+    @include trailing-border(1px, 1, $base-font-size, solid $color-secondary);
+  }
+}
+
+p.post-summary__preview {
+  @include adjust-font-size-to(15px, .75, $base-font-size);
+  margin-bottom: rhythm(.5);
+}

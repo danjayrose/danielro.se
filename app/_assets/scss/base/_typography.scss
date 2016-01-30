@@ -9,20 +9,6 @@ body {
 	letter-spacing: rhythm(.025);
 }
 
-p:first-of-type {
-	font-weight: 700;
-	text-align: left;
-	@include adjust-font-size-to( 20px, 1 );
-}
-
-p:first-of-type + p:first-letter {
-	float: left;
-	@include adjust-font-size-to( $base-line-height * 4, 3 );
-	padding-right: rhythm(.25);
-	font-weight: 700;
-	color: $color-main;
-}
-
 hr {
 	border: none;
 	border-top: rhythm(.125) double $color-type;

@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="page page--post">
+<article class="post">
 
   <header class="page__header"
     {% if page.image.feature %}
@@ -21,18 +21,40 @@ layout: default
 {{ page.date | date: " %B %Y" }}
 {% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
 	 </time>
-   {% capture words %}
-    {{ content | number_of_words | minus: 180 }}
-    {% endcapture %}
-    <time class="page__reading-time" datetime="{{ words | plus: 180 | divided_by: 180 | append: "m"}}">
-      <div class="wrapper">
-      {% unless words contains "-" %}
-        {{ words | plus: 180 | divided_by: 180 | prepend: "Approx. " | append: " minute read" }}
-        {% else %}
-        Under 1 minute read
-      {% endunless %}
-      </div>
-    </time>
+    <nav class="tab">
+      {% capture url_parts %} {{ page.url | remove: "/index.html" | replace:'/'," " }}{% endcapture %}
+      {% capture num_parts %}{{ url_parts | number_of_words | minus: 1 }}{% endcapture %}
+      {% assign previous="" %}
+      <ol class="breadcrumb wrapper">
+       {% if num_parts == "0" or num_parts == "-1" %}
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/">Home</a>&nbsp;&rsaquo;&nbsp;</li>
+       {% else %}
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="/">Home</a>&nbsp;&rsaquo;&nbsp;</li>
+
+        {% for unused in page.content limit:num_parts %}
+         {% capture first_word %}{{ url_parts | truncatewords:1 | remove:"..." | capitalize}}{% endcapture %}
+         {% capture previous %}{{ previous }}/{{ first_word }}{% endcapture %}
+
+         <li class="breadcrumb__item"><a class="breadcrumb__link" href="{{previous}}">{{ first_word }}</a>&nbsp;&rsaquo;&nbsp;</li>
+
+         {% capture url_parts %}{{ url_parts | remove_first:first_word }}{% endcapture %}
+        {% endfor %}
+       {% endif %}
+       <li class="breadcrumb__item"><a class="breadcrumb__link">{{ page.title }}</a></li>
+     </ol>
+    </nav>
+    <div class="wrapper">
+      {% capture words %}
+      {{ content | number_of_words | minus: 180 }}
+      {% endcapture %}
+      <time class="post__reading-time" datetime="{{ words | plus: 180 | divided_by: 180 | append: "m"}}">
+        {% unless words contains "-" %}
+          {{ words | plus: 180 | divided_by: 180 | prepend: "Approx. " | append: " minute read" }}
+          {% else %}
+          Under 1 minute read
+        {% endunless %}
+      </time>
+    </div>
   </header>
 
   <section class="page-content">

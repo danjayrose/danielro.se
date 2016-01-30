@@ -62,6 +62,8 @@ main {
 .grid {
 	display: flex;
 	flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
 }
 
 .grid--gutter {
@@ -100,5 +102,11 @@ main {
 	@include media(">ph") {
 		width: 33.333%;
 		width: calc(100% /3);
+	}
+}
+
+.col--1\/4\@\>\=wd {
+	@include media(">=wd") {
+		width: 25%;
 	}
 }

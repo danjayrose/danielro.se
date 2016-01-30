@@ -1,26 +1,33 @@
 ---
 layout: default
 ---
-<div class="post">
+<div class="listing">
 
-  <section class="page__summary">
+  <section>
     <header class="page__header">
       <h1 class="h1 page__title wrapper">Projects</h1>
-      <h4 class="page__sub-title wrapper">Hand picked selection of projects I have been involved in</h4>
+      <h4 class="page__sub-title wrapper">A selection of projects I have been involved in</h4>
+      <nav class="tab">
+        <ol class="breadcrumb wrapper">
+          <li class="breadcrumb__item"><a class="breadcrumb__link" href="/">Home</a>&nbsp;&rsaquo;&nbsp;</li>
+          <li class="breadcrumb__item"><a class="breadcrumb__link">Projects</a></li>
+        </ol>
+      </nav>
     </header>
     <div class="wrapper">
-      <div class="grid grid--gutter">
+      <ol class="grid grid--gutter">
         {% for post in site.posts %}
           {% if post.categories contains 'projects' %}
-            <div class="col col--1/2@>ph<=tb col--1/3@>=tb">
-              <a class="card" href="{{ post.url | prepend: site.baseurl }}">
-                <h2>{{ post.title }}</h2>
+            <li class="col">
+              <a class="post-summary" href="{{ post.url | prepend: site.baseurl }}">
+                <h2 class="h2">{{ post.title }}</h2>
+                <p class="post-summary__preview">{{ post.content | strip_html | truncatewords:40}}</p>
                 <div>{{ post.date | date: "%b %-d, %Y" }}</div>
               </a>
-            </div>
+            </li>
           {% endif %}
         {% endfor %}
-      </div>
+      </ol>
     </div>
   </section>
 

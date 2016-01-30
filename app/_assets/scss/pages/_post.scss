@@ -1,0 +1,29 @@
+p {
+  .post & {
+    &:first-of-type {
+    	font-weight: 700;
+    	text-align: left;
+    	@include adjust-font-size-to( 20px, 1 );
+    }
+    &:first-of-type + :first-letter {
+    	float: left;
+    	@include adjust-font-size-to( $base-line-height * 4, 3 );
+    	padding-right: rhythm(.25);
+    	font-weight: 700;
+    	color: $color-main;
+    }
+  }
+}
+
+.post__reading-time {
+  color: $color-type-soft;
+  font-style: italic;
+  display: block;
+  padding: rhythm(.25) 0;
+  clear: left;
+
+  @include media(">=tb") {
+    clear: none;
+    float: right;
+  }
+}

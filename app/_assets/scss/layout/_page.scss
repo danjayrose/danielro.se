@@ -41,15 +41,40 @@
 	font-weight: 700;
 }
 
-.page__reading-time {
+.tab {
+	float: left;
 	display: inline-block;
-	color: $color-highlight;
+	color: $color-secondary-accent;
 	background: $color-darken-opacity;
-	font-style: italic;
 	padding-left: calc((100% - #{rhythm(35)}) / 2);
 
 	@include media(">=wd") {
 		padding-left: calc((100% - #{rhythm(50)}) / 2);
+	}
+}
+
+.breadcrumb {
+	overflow: hidden;
+}
+
+.breadcrumb__item {
+	float: left;
+
+	@include media("<tb") {
+		display: none;
+	}
+}
+
+.breadcrumb__link {
+	text-decoration: none;
+	color: $color-highlight;
+	padding: rhythm(.25) 0;
+	display: inline-block;
+
+	&:hover {
+		.site-content & {
+			color: $color-highlight;
+		}
 	}
 }
 
