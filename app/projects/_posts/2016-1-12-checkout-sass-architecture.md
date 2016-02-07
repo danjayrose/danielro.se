@@ -41,7 +41,7 @@ compass: {
 }
 {% endhighlight %}
 
-As you can see, each brand has an importPath which is a Compass option that makes all files within the `global/sass` folder findable by SASS's `@import` directive. This allows the ability to pull a bunch of SASS into the existing context. The config property enables the import of configuration set in the brands' config.rb files. An excerpt of Gemporia's config is below.
+As you can see, each brand has an importPath which is a Compass option that makes all files within the global/sass folder findable by SASS's `@import` directive. This allows the ability to pull a bunch of SASS into the existing context. The config property enables the import of configuration set in the brands' config.rb files. An excerpt of Gemporia's config is below.
 
 {% highlight ruby linenos %}
 ...
@@ -52,7 +52,7 @@ fonts_dir = 'gemporia/fonts'
 ...
 {% endhighlight %}
 
-Adapted from [Hugo Giraudel’s 7-1 Pattern](http://sass-guidelin.es/#the-7-1-pattern) (which is great btw) here's a snippet from `gemporia/sass/main.scss` which will ultimately pull in all SASS files from the relative folders plus the `global/sass` folder. It will compile into `gemporia/css/main.css` based on the configuration. In the comments on the right you can see the actual location of the partials relative to the root.
+Adapted from [Hugo Giraudel’s 7-1 Pattern](http://sass-guidelin.es/#the-7-1-pattern) (which is great btw) here's a snippet from gemporia/sass/main.scss which will ultimately pull in all SASS files from the relative folders plus the global/sass folder. It will compile into gemporia/css/main.css based on the configuration. In the comments on the right you can see the actual location of the partials relative to the root.
 
 {% highlight ruby linenos %}
 @import 'utils/theme';          // @import 'gemporia/sass/utils/_theme.scss';
@@ -76,11 +76,11 @@ Adapted from [Hugo Giraudel’s 7-1 Pattern](http://sass-guidelin.es/#the-7-1-pa
 @import 'vendors/..';
 {% endhighlight %}
 
-You may have noticed that `utils/theme`, `utils/refine` and `base/fonts` are all imported from Gemporia's SASS folder. This is how I was able to import the brand specific styles and variables.
+You may have noticed that utils/theme, utils/refine and base/fonts are all imported from Gemporia's SASS folder. This is how I was able to import the brand specific styles and variables.
 
-The *theme* partial contains all variables that are referenced in the `global/sass` folder and the *fonts* partial imports the appropriate brand font files. *Refine*, however, acts a bit differently in that it contains a mixin, also called refine, which specifies all of the more general style differences between the brands.
+The *theme* partial contains all variables that are referenced in the global/sass folder and the *fonts* partial imports the appropriate brand font files. *Refine*, however, acts a bit differently in that it contains a mixin, also called refine, which specifies all of the more general style differences between the brands.
 
-For example, whilst 3 of the brands have square buttons, Jewellery Maker has rounded edged buttons. The refine mixin allows the import of border-radius to Jewellery Maker's CSS file without affecting the other brands. A snippet from `components/buttons` show's how this is achieved:
+For example, whilst 3 of the brands have square buttons, Jewellery Maker has rounded edged buttons. The refine mixin allows the import of border-radius to Jewellery Maker's CSS file without affecting the other brands. A snippet from components/buttons show's how this is achieved:
 
 {% highlight ruby linenos %}
 
@@ -92,7 +92,7 @@ For example, whilst 3 of the brands have square buttons, Jewellery Maker has rou
 
 {% endhighlight %}
 
-Then, within `jewellery-maker/sass/utils/refine`:
+Then, within jewellery-maker/sass/utils/refine:
 
 {% highlight ruby linenos %}
 
