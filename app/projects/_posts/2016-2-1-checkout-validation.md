@@ -15,7 +15,3 @@ Still here? Oh well - the good news is that you are able to disable the native u
 </div>
 
 More good news is that it isn't really that painful to implement and [browser support is pretty good too](http://caniuse.com/#search=validation).
-
-{% highlight ruby linenos %}
-
-{% endhighlight %}
