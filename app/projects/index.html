@@ -1,8 +1,7 @@
 ---
 layout: default
 ---
-<div class="listing">
-  <section>
+<article class="listing">
     <header class="page__header">
       <h1 class="h1 page__title wrapper">Projects</h1>
       <h4 class="page__sub-title wrapper">A selection of projects I have been involved in</h4>
@@ -13,7 +12,7 @@ layout: default
         </ol>
       </nav>
     </header>
-    <div class="wrapper">
+    <section class="wrapper">
       <ol class="grid grid--gutter">
         {% for post in site.posts %}
           {% if post.categories contains 'projects' %}
@@ -27,7 +26,5 @@ layout: default
           {% endif %}
         {% endfor %}
       </ol>
-    </div>
-  </section>
-
-</div>
+    </section>
+</article>
