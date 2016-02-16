@@ -1,9 +1,7 @@
 ---
 layout: default
 ---
-<div class="listing">
-
-  <section>
+<article class="listing">
     <header class="page__header">
       <h1 class="h1 page__title wrapper">Blog</h1>
       <h4 class="page__sub-title wrapper">Occasional knowledge bombs</h4>
@@ -14,7 +12,7 @@ layout: default
         </ol>
       </nav>
     </header>
-    <div class="wrapper">
+    <section class="wrapper">
       <ol class="grid grid--gutter">
         {% for post in site.posts %}
           {% unless post.categories contains 'projects' %}
@@ -29,6 +27,4 @@ layout: default
         {% endfor %}
       </ol>
     </div>
-  </section>
-
-</div>
+</article>
