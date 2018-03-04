@@ -21,7 +21,7 @@ SASS is a great tool for scenarios like this and combined with Grunt I was able 
 
 The global folder contains all of the common styles the brands share and the remaining folders contain the brand specific SASS files. Note that I wanted to keep all code related to each brand within it's own folder alongside all other brand assets.
 
-The grunt configuration within the compass task is as follows:
+The grunt configuration within the compass task is as below:
 
 {% highlight ruby linenos %}
 compass: {
@@ -57,11 +57,11 @@ Adapted from [Hugo Giraudel’s 7-1 Pattern](http://sass-guidelin.es/#the-7-1-pa
 {% highlight ruby linenos %}
 @import 'utils/theme';          // @import 'gemporia/sass/utils/_theme.scss';
 @import 'utils/refine';         // @import 'gemporia/sass/utils/_refine.scss';
-@import 'utils/variables';      // @import 'global/sass/utils/_variables.scss';  
+@import 'utils/variables';      // @import 'global/sass/utils/_variables.scss';
 @import 'utils/..';
 
 @import 'base/fonts';           // @import 'gemporia/sass/base/_fonts.scss';
-@import 'base/normalize';       // @import 'global/sass/base/_normalize.scss';  
+@import 'base/normalize';       // @import 'global/sass/base/_normalize.scss';
 @import 'base/..';
 
 @import 'layout/grid';          // @import 'global/sass/layout/_grid.scss';
